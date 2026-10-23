@@ -34,6 +34,63 @@ export const popularCars: Car[] = [
   },
 ];
 
+export const catalogCars: Car[] = [
+  {
+    name: "Kia Rio",
+    className: "эконом",
+    pricePerDay: 1900,
+    description: "Компактный и экономичный автомобиль для города.",
+  },
+  {
+    name: "Hyundai Solaris",
+    className: "эконом",
+    pricePerDay: 2100,
+    description: "Манёвренный седан, удобный для поездок по городу.",
+  },
+  {
+    name: "Lada Vesta",
+    className: "эконом",
+    pricePerDay: 1700,
+    description: "Надёжный и доступный автомобиль на каждый день.",
+  },
+  {
+    name: "Hyundai Creta",
+    className: "комфорт",
+    pricePerDay: 2900,
+    description: "Просторный кроссовер для города и загородных поездок.",
+  },
+  {
+    name: "Kia Sportage",
+    className: "комфорт",
+    pricePerDay: 3300,
+    description: "Стильный кроссовер с уверенным поведением на дороге.",
+  },
+  {
+    name: "Volkswagen Tiguan",
+    className: "комфорт",
+    pricePerDay: 3600,
+    description: "Сбалансированный кроссовер для семьи и путешествий.",
+  },
+  {
+    name: "Toyota Camry",
+    className: "бизнес",
+    pricePerDay: 4200,
+    description: "Представительский седан для деловых поездок.",
+  },
+  {
+    name: "BMW 5 Series",
+    className: "бизнес",
+    pricePerDay: 5900,
+    description: "Премиальный седан с характером и комфортом.",
+  },
+  {
+    name: "Mercedes-Benz E-Class",
+    className: "бизнес",
+    pricePerDay: 6500,
+    description: "Элегантный бизнес-седан с безупречным комфортом.",
+  },
+];
+
 export const advantages = [
   {
     title: "Страховка включена",

@@ -1,13 +1,16 @@
+import type { Metadata } from "next";
+import { CatalogSection } from "@/components/catalog-section";
+
+export const metadata: Metadata = {
+  title: "Каталог автомобилей | АвтоПрокат",
+  description:
+    "Каталог автомобилей в аренду: эконом, комфорт и бизнес-класс. Прозрачные цены за сутки, страховка включена. Забронируйте автомобиль онлайн.",
+};
+
 export default function CatalogPage() {
   return (
-    <main className="container mx-auto px-4 py-20 sm:py-28">
-      <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">
-        Каталог
-      </h1>
-      <p className="mt-6 text-lg text-muted-foreground">
-        Каталог автомобилей появится в ближайшем обновлении. Навигация уже
-        работает.
-      </p>
-    </main>
+    <>
+      <CatalogSection />
+    </>
   );
 }
