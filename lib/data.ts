@@ -50,3 +50,23 @@ export const advantages = [
       "Никаких скрытых платежей: финальная стоимость известна до бронирования.",
   },
 ];
+
+export const appName = "АвтоПрокат";
+
+export const navLinks = [
+  { href: "/", label: "Главная" },
+  { href: "/services", label: "Услуги" },
+  { href: "/catalog", label: "Каталог" },
+  { href: "/about", label: "О нас" },
+  { href: "/contacts", label: "Контакты" },
+  { href: "/policy", label: "Политика" },
+] as const;
+
+export const companyContacts = {
+  phone: "+7 (900) 000-00-00",
+  phoneHref: "tel:+79000000000",
+  email: "info@avtoprokat.ru",
+  emailHref: "mailto:info@avtoprokat.ru",
+  address: "г. Москва, ул. Центральная, 1",
+  hours: "Ежедневно с 8:00 до 22:00",
+};
