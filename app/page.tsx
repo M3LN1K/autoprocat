@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section";
 import { AdvantagesSection } from "@/components/advantages-section";
 import { PopularCarsSlider } from "@/components/popular-cars-slider";
 import { AboutSection } from "@/components/about-section";
+import { BookingSection } from "@/components/booking-section";
 import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HeroSection />
       <AdvantagesSection />
       <PopularCarsSlider />
+      <BookingSection />
       <AboutSection />
       <CtaSection />
     </>

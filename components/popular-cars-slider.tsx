@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import { CarImage } from "@/components/car-image";
 import { popularCars } from "@/lib/data";
 
 export function PopularCarsSlider() {
@@ -59,8 +59,9 @@ export function PopularCarsSlider() {
               data-slide
               className="card-hover w-[280px] shrink-0 snap-start rounded-xl bg-card p-4 ring-1 ring-foreground/10 sm:w-[320px]"
             >
-              <PhotoPlaceholder
-                label={car.name}
+              <CarImage
+                src={car.image}
+                alt={car.name}
                 className="aspect-[4/3] w-full"
               />
               <div className="mt-5 flex items-start justify-between gap-3">
@@ -84,7 +85,9 @@ export function PopularCarsSlider() {
                   </span>{" "}
                   / сутки
                 </p>
-                <Button size="sm">Забронировать</Button>
+                <Button size="sm" render={<a href="/catalog#booking" />}>
+                  Забронировать
+                </Button>
               </div>
             </article>
           ))}

@@ -5,6 +5,7 @@ export type Car = {
   className: CarClass;
   pricePerDay: number;
   description: string;
+  image: string;
 };
 
 export const popularCars: Car[] = [
@@ -13,24 +14,28 @@ export const popularCars: Car[] = [
     className: "эконом",
     pricePerDay: 1900,
     description: "Компактный и экономичный автомобиль для города.",
+    image: "/assets/cars/kia-rio.jpg",
   },
   {
     name: "Hyundai Creta",
     className: "комфорт",
     pricePerDay: 2900,
     description: "Просторный кроссовер для города и загородных поездок.",
+    image: "/assets/cars/hyundai-creta.png",
   },
   {
     name: "Toyota Camry",
     className: "бизнес",
     pricePerDay: 4200,
     description: "Представительский седан для деловых поездок.",
+    image: "/assets/cars/toyota-camry.jpg",
   },
   {
     name: "BMW 5 Series",
     className: "бизнес",
     pricePerDay: 5900,
     description: "Премиальный седан с характером и комфортом.",
+    image: "/assets/cars/bmw-5-series.jpg",
   },
 ];
 
@@ -40,54 +45,63 @@ export const catalogCars: Car[] = [
     className: "эконом",
     pricePerDay: 1900,
     description: "Компактный и экономичный автомобиль для города.",
+    image: "/assets/cars/kia-rio.jpg",
   },
   {
     name: "Hyundai Solaris",
     className: "эконом",
     pricePerDay: 2100,
     description: "Манёвренный седан, удобный для поездок по городу.",
+    image: "/assets/cars/hyundai-solaris.jpg",
   },
   {
     name: "Lada Vesta",
     className: "эконом",
     pricePerDay: 1700,
     description: "Надёжный и доступный автомобиль на каждый день.",
+    image: "/assets/cars/lada-vesta.jpg",
   },
   {
     name: "Hyundai Creta",
     className: "комфорт",
     pricePerDay: 2900,
     description: "Просторный кроссовер для города и загородных поездок.",
+    image: "/assets/cars/hyundai-creta.png",
   },
   {
     name: "Kia Sportage",
     className: "комфорт",
     pricePerDay: 3300,
     description: "Стильный кроссовер с уверенным поведением на дороге.",
+    image: "/assets/cars/kia-sportage.jpg",
   },
   {
     name: "Volkswagen Tiguan",
     className: "комфорт",
     pricePerDay: 3600,
     description: "Сбалансированный кроссовер для семьи и путешествий.",
+    image: "/assets/cars/volkswagen-tiguan.jpg",
   },
   {
     name: "Toyota Camry",
     className: "бизнес",
     pricePerDay: 4200,
     description: "Представительский седан для деловых поездок.",
+    image: "/assets/cars/toyota-camry.jpg",
   },
   {
     name: "BMW 5 Series",
     className: "бизнес",
     pricePerDay: 5900,
     description: "Премиальный седан с характером и комфортом.",
+    image: "/assets/cars/bmw-5-series.jpg",
   },
   {
     name: "Mercedes-Benz E-Class",
     className: "бизнес",
     pricePerDay: 6500,
     description: "Элегантный бизнес-седан с безупречным комфортом.",
+    image: "/assets/cars/mercedes-e-class.jpg",
   },
 ];
 
@@ -185,6 +199,16 @@ export const companyStats = [
 ];
 
 export const appName = "АвтоПрокат";
+
+export const heroCar = {
+  image: "/assets/cars/bmw-5-series.jpg",
+  alt: "Премиальный седан бизнес-класса в аренду",
+};
+
+export const teamPhoto = {
+  image: "/assets/cars/kia-rio.jpg",
+  alt: "Подготовка автомобиля к выдаче в автопрокате",
+};
 
 export const navLinks = [
   { href: "/", label: "Главная" },

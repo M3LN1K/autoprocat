@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import { CarImage } from "@/components/car-image";
+import { BookingForm } from "@/components/booking-form";
 import { catalogCars } from "@/lib/data";
 
 export function CatalogSection() {
@@ -25,8 +26,9 @@ export function CatalogSection() {
               key={car.name}
               className="card-hover flex flex-col rounded-xl bg-card p-4 ring-1 ring-foreground/10"
             >
-              <PhotoPlaceholder
-                label={car.name}
+              <CarImage
+                src={car.image}
+                alt={car.name}
                 className="aspect-[4/3] w-full"
               />
               <div className="mt-5 flex items-start justify-between gap-3">
@@ -53,12 +55,16 @@ export function CatalogSection() {
                 <Button
                   size="sm"
                   className="bg-amber-500 text-[#0b1b3a] hover:bg-amber-400"
+                  render={<a href="#booking" />}
                 >
                   Забронировать
                 </Button>
               </div>
             </article>
           ))}
+        </div>
+        <div id="booking" className="mt-16 scroll-mt-24">
+          <BookingForm />
         </div>
       </div>
     </section>

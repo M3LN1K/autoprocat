@@ -6,8 +6,8 @@ import {
   UsersRound,
   BadgeCheck,
 } from "lucide-react";
-import { companyStats, companyStory } from "@/lib/data";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import { companyStats, companyStory, teamPhoto } from "@/lib/data";
+import { CarImage } from "@/components/car-image";
 
 const storyIcons = [Clock3, Car, ShieldCheck];
 const statIcons = [CalendarDays, Car, UsersRound];
@@ -89,7 +89,11 @@ export function AboutPageSection() {
         </div>
 
         <div className="mt-16 grid items-center gap-12 lg:grid-cols-2">
-          <PhotoPlaceholder label="команда" className="aspect-[4/3] w-full" />
+          <CarImage
+            src={teamPhoto.image}
+            alt={teamPhoto.alt}
+            className="aspect-[4/3] w-full"
+          />
           <div className="space-y-4">
             <p className="text-sm font-semibold tracking-widest text-amber-600 uppercase">
               Наша команда
@@ -98,9 +102,9 @@ export function AboutPageSection() {
               Люди, которые заботятся о вашей поездке
             </h2>
             <p className="text-lg text-muted-foreground">
-              Фото пока нет, но мы уже готовы встретить вас: менеджеры по
-              подбору авто, механики, которые проверяют каждую машину перед
-              выдачей, и водители, доставляющие автомобиль в любую точку города.
+              Мы уже готовы встретить вас: менеджеры по подбору авто, механики,
+              которые проверяют каждую машину перед выдачей, и водители,
+              доставляющие автомобиль в любую точку города.
             </p>
             <ul className="mt-4 space-y-2">
               {companyStory.map((block) => (

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import { CarImage } from "@/components/car-image";
+import { heroCar } from "@/lib/data";
 
 export function HeroSection() {
   return (
@@ -41,9 +42,10 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
-        <PhotoPlaceholder
-          label="автомобиль"
-          className="aspect-[4/3] w-full bg-white/10 text-blue-100/70"
+        <CarImage
+          src={heroCar.image}
+          alt={heroCar.alt}
+          className="aspect-[4/3] w-full"
         />
       </div>
     </section>
