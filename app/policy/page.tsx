@@ -1,13 +1,16 @@
+import type { Metadata } from "next";
+import { PolicySection } from "@/components/policy-section";
+
+export const metadata: Metadata = {
+  title: "Политика | АвтоПрокат",
+  description:
+    "Политика конфиденциальности и условия аренды автомобилей АвтоПрокат: обработка данных, страховка, оплата, бронирование и ответственность.",
+};
+
 export default function PolicyPage() {
   return (
-    <main className="container mx-auto px-4 py-20 sm:py-28">
-      <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">
-        Политика
-      </h1>
-      <p className="mt-6 text-lg text-muted-foreground">
-        Страница политики появится в ближайшем обновлении. Навигация уже
-        работает.
-      </p>
-    </main>
+    <>
+      <PolicySection />
+    </>
   );
 }
