@@ -51,6 +51,34 @@ export const advantages = [
   },
 ];
 
+export type Service = {
+  title: string;
+  description: string;
+};
+
+export const services: Service[] = [
+  {
+    title: "Прокат на сутки",
+    description:
+      "Автомобиль на 24 часа с полной страховкой и подачей в любую точку города.",
+  },
+  {
+    title: "Аренда на свадьбу",
+    description:
+      "Премиальные автомобили для торжества — с водителем и праздничным оформлением.",
+  },
+  {
+    title: "Корпоративный парк",
+    description:
+      "Гибкие тарифы и договоры для компаний: обслуживание автопарка под ключ.",
+  },
+  {
+    title: "Аренда с водителем",
+    description:
+      "Личный водитель на весь маршрут — комфорт и безопасность в каждой поездке.",
+  },
+];
+
 export const appName = "АвтоПрокат";
 
 export const navLinks = [
