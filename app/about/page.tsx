@@ -1,13 +1,16 @@
+import type { Metadata } from "next";
+import { AboutPageSection } from "@/components/about-page-section";
+
+export const metadata: Metadata = {
+  title: "О нас | АвтоПрокат",
+  description:
+    "АвтоПрокат — компания по аренде автомобилей с 8-летним опытом, парком 40+ машин и 12 000 довольных клиентов. Страховка и прозрачные цены в каждой поездке.",
+};
+
 export default function AboutPage() {
   return (
-    <main className="container mx-auto px-4 py-20 sm:py-28">
-      <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">
-        О нас
-      </h1>
-      <p className="mt-6 text-lg text-muted-foreground">
-        Страница о компании появится в ближайшем обновлении. Навигация уже
-        работает.
-      </p>
-    </main>
+    <>
+      <AboutPageSection />
+    </>
   );
 }
