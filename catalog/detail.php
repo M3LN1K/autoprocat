@@ -31,14 +31,14 @@ $included = [
       <!-- Галерея -->
       <div class="gallery">
         <div class="img-ph gallery__main">
-          <span class="img-ph__label">Main image · 1600×1000</span>
+          <img src="<?=SITE_TEMPLATE_PATH?>/images/detail-huracan-spyder.jpg" alt="Lamborghini Huracán EVO Spyder" width="1600" height="1000">
           <span class="badge badge--cyan">Суперкар</span>
         </div>
         <ul class="gallery__thumbs">
-          <li><button type="button" class="img-ph gallery__thumb is-active" aria-label="Фото 1"></button></li>
-          <li><button type="button" class="img-ph gallery__thumb" aria-label="Фото 2"></button></li>
-          <li><button type="button" class="img-ph gallery__thumb" aria-label="Фото 3"></button></li>
-          <li><button type="button" class="img-ph gallery__thumb" aria-label="Фото 4"></button></li>
+          <li><button type="button" class="img-ph gallery__thumb is-active" aria-label="Фото 1"><img src="<?=SITE_TEMPLATE_PATH?>/images/detail-huracan-spyder.jpg" alt="Lamborghini Huracán EVO Spyder — экстерьер"></button></li>
+          <li><button type="button" class="img-ph gallery__thumb" aria-label="Фото 2"><img src="<?=SITE_TEMPLATE_PATH?>/images/hero-car.jpg" alt="Lamborghini Huracán EVO Spyder в городе"></button></li>
+          <li><button type="button" class="img-ph gallery__thumb" aria-label="Фото 3"><img src="<?=SITE_TEMPLATE_PATH?>/images/detail-huracan-interior.jpg" alt="Lamborghini Huracán EVO Spyder — салон"></button></li>
+          <li><button type="button" class="img-ph gallery__thumb" aria-label="Фото 4"><img src="<?=SITE_TEMPLATE_PATH?>/images/card-huracan-evo.jpg" alt="Lamborghini Huracán EVO Spyder — вид сбоку"></button></li>
         </ul>
       </div>
 

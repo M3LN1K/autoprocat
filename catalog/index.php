@@ -3,12 +3,12 @@ $APPLICATION->SetTitle("Каталог");
 $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/catalog.css");
 
 $cars = [
-  ['Lamborghini Huracán EVO', '89 000', ['3.5 с', '625 л.с.', 'AWD']],
-  ['Ferrari 296 GTB',         '95 000', ['2.9 с', '830 л.с.', 'RWD']],
-  ['McLaren 720S',            '78 000', ['2.9 с', '720 л.с.', 'RWD']],
-  ['Porsche 911 Turbo S',     '64 000', ['2.7 с', '650 л.с.', 'AWD']],
-  ['BMW M8 Competition',      '48 000', ['3.2 с', '625 л.с.', 'xDrive']],
-  ['Mercedes-AMG G 63',       '42 000', ['4.5 с', '585 л.с.', '4MATIC']],
+  ['Lamborghini Huracán EVO', '89 000', ['3.5 с', '625 л.с.', 'AWD'], 'card-huracan-evo.jpg'],
+  ['Ferrari 296 GTB',         '95 000', ['2.9 с', '830 л.с.', 'RWD'], 'card-ferrari-296-gtb.jpg'],
+  ['McLaren 720S',            '78 000', ['2.9 с', '720 л.с.', 'RWD'], 'card-mclaren-720s.jpg'],
+  ['Porsche 911 Turbo S',     '64 000', ['2.7 с', '650 л.с.', 'AWD'], 'card-porsche-911-turbo-s.jpg'],
+  ['BMW M8 Competition',      '48 000', ['3.2 с', '625 л.с.', 'xDrive'], 'card-bmw-m8.jpg'],
+  ['Mercedes-AMG G 63',       '42 000', ['4.5 с', '585 л.с.', '4MATIC'], 'card-amg-g63.jpg'],
 ];
 ?>
 
@@ -108,11 +108,11 @@ $cars = [
       <!-- bitrix:catalog.section -->
       <div>
         <ul class="catalog__grid">
-          <?foreach($cars as [$name, $price, $specs]):?>
+          <?foreach($cars as [$name, $price, $specs, $img]):?>
           <li>
             <article class="car-card glass">
               <div class="img-ph car-card__image">
-                <span class="img-ph__label">Image</span>
+                <img src="<?=SITE_TEMPLATE_PATH?>/images/<?=$img?>" alt="<?=$name?>" width="1600" height="1000" loading="lazy">
                 <span class="car-card__price"><?=$price?> ₽/сут</span>
               </div>
               <div class="car-card__body">
