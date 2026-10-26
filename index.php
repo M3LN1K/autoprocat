@@ -32,8 +32,7 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
 
     <div class="hero__media">
       <div class="img-ph hero__image">
-        <!-- <img src="<?=SITE_TEMPLATE_PATH?>/images/hero-car.jpg" alt="Lamborghini Huracán EVO"> -->
-        <span class="img-ph__label">Cinematic car image · 1600×1200</span>
+        <img src="<?=SITE_TEMPLATE_PATH?>/images/home-hero-car.jpg" alt="NEONDRIVE — суперкар в неоновом городе" width="1600" height="1200" fetchpriority="high">
       </div>
       <div class="hero__hit glass">
         <div>
@@ -61,7 +60,7 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
       <!-- Шаблон карточки (bitrix:news.list). Модификатор цвета: home-card--cyan / --violet / --lime -->
       <article class="home-card home-card--cyan glass">
         <div class="img-ph home-card__image">
-          <span class="img-ph__label">Image 16:10</span>
+          <img src="<?=SITE_TEMPLATE_PATH?>/images/home-card-huracan.jpg" alt="Lamborghini Huracán EVO" width="1600" height="1000" loading="lazy">
           <span class="badge badge--cyan">Суперкар</span>
         </div>
         <div class="home-card__body">
@@ -76,7 +75,7 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
 
       <article class="home-card home-card--violet glass">
         <div class="img-ph home-card__image">
-          <span class="img-ph__label">Image 16:10</span>
+          <img src="<?=SITE_TEMPLATE_PATH?>/images/home-card-porsche.jpg" alt="Porsche 911 Turbo S" width="1600" height="1000" loading="lazy">
           <span class="badge badge--violet">Спорт</span>
         </div>
         <div class="home-card__body">
@@ -91,7 +90,7 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
 
       <article class="home-card home-card--lime glass">
         <div class="img-ph home-card__image">
-          <span class="img-ph__label">Image 16:10</span>
+          <img src="<?=SITE_TEMPLATE_PATH?>/images/home-card-g63.jpg" alt="Mercedes-AMG G 63" width="1600" height="1000" loading="lazy">
           <span class="badge badge--lime">Внедорожник</span>
         </div>
         <div class="home-card__body">
