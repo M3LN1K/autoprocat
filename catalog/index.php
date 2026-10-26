@@ -1,181 +1,147 @@
-<?
-define("HIDE_SIDEBAR", true);
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+$APPLICATION->SetTitle("Каталог");
+$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/catalog.css");
+
+$cars = [
+  ['Lamborghini Huracán EVO', '89 000', ['3.5 с', '625 л.с.', 'AWD']],
+  ['Ferrari 296 GTB',         '95 000', ['2.9 с', '830 л.с.', 'RWD']],
+  ['McLaren 720S',            '78 000', ['2.9 с', '720 л.с.', 'RWD']],
+  ['Porsche 911 Turbo S',     '64 000', ['2.7 с', '650 л.с.', 'AWD']],
+  ['BMW M8 Competition',      '48 000', ['3.2 с', '625 л.с.', 'xDrive']],
+  ['Mercedes-AMG G 63',       '42 000', ['4.5 с', '585 л.с.', '4MATIC']],
+];
 ?>
-<?$APPLICATION->IncludeComponent("bitrix:catalog", "bootstrap_v4", array(
-	"IBLOCK_TYPE" => "catalog",
-	"IBLOCK_ID" => "2",
-	"TEMPLATE_THEME" => "site",
-	"HIDE_NOT_AVAILABLE" => "N",
-	"BASKET_URL" => "/personal/cart/",
-	"ACTION_VARIABLE" => "action",
-	"PRODUCT_ID_VARIABLE" => "id",
-	"SECTION_ID_VARIABLE" => "SECTION_ID",
-	"PRODUCT_QUANTITY_VARIABLE" => "quantity",
-	"PRODUCT_PROPS_VARIABLE" => "prop",
-	"SEF_MODE" => "Y",
-	"SEF_FOLDER" => "/catalog/",
-	"AJAX_MODE" => "N",
-	"AJAX_OPTION_JUMP" => "N",
-	"AJAX_OPTION_STYLE" => "Y",
-	"AJAX_OPTION_HISTORY" => "N",
-	"CACHE_TYPE" => "A",
-	"CACHE_TIME" => "36000000",
-	"CACHE_FILTER" => "Y",
-	"CACHE_GROUPS" => "Y",
-	"SET_TITLE" => "Y",
-	"ADD_SECTION_CHAIN" => "Y",
-	"ADD_ELEMENT_CHAIN" => "Y",
-	"SET_STATUS_404" => "Y",
-	"DETAIL_DISPLAY_NAME" => "N",
-	"USE_ELEMENT_COUNTER" => "Y",
-	"USE_FILTER" => "Y",
-	"FILTER_NAME" => "",
-	"FILTER_VIEW_MODE" => "VERTICAL",
-	"USE_COMPARE" => "N",
-	"PRICE_CODE" => array(
-		0 => "BASE",
-	),
-	"USE_PRICE_COUNT" => "N",
-	"SHOW_PRICE_COUNT" => "1",
-	"PRICE_VAT_INCLUDE" => "Y",
-	"PRICE_VAT_SHOW_VALUE" => "N",
-	"PRODUCT_PROPERTIES" => array(
-	),
-	"USE_PRODUCT_QUANTITY" => "Y",
-	"CONVERT_CURRENCY" => "N",
-	"QUANTITY_FLOAT" => "N",
-	"OFFERS_CART_PROPERTIES" => array(
-		0 => "SIZES_SHOES",
-		1 => "SIZES_CLOTHES",
-		2 => "COLOR_REF",
-	),
-	"SHOW_TOP_ELEMENTS" => "N",
-	"SECTION_COUNT_ELEMENTS" => "N",
-	"SECTION_TOP_DEPTH" => "1",
-	"SECTIONS_VIEW_MODE" => "TILE",
-	"SECTIONS_SHOW_PARENT_NAME" => "N",
-	"PAGE_ELEMENT_COUNT" => "15",
-	"LINE_ELEMENT_COUNT" => "3",
-	"ELEMENT_SORT_FIELD" => "desc",
-	"ELEMENT_SORT_ORDER" => "asc",
-	"ELEMENT_SORT_FIELD2" => "id",
-	"ELEMENT_SORT_ORDER2" => "desc",
-	"LIST_PROPERTY_CODE" => array(
-		0 => "NEWPRODUCT",
-		1 => "SALELEADER",
-		2 => "SPECIALOFFER",
-		3 => "",
-	),
-	"INCLUDE_SUBSECTIONS" => "Y",
-	"LIST_META_KEYWORDS" => "UF_KEYWORDS",
-	"LIST_META_DESCRIPTION" => "UF_META_DESCRIPTION",
-	"LIST_BROWSER_TITLE" => "UF_BROWSER_TITLE",
-	"LIST_OFFERS_FIELD_CODE" => array(
-		0 => "NAME",
-		1 => "PREVIEW_PICTURE",
-		2 => "DETAIL_PICTURE",
-		3 => "",
-	),
-	"LIST_OFFERS_PROPERTY_CODE" => array(
-		0 => "SIZES_SHOES",
-		1 => "SIZES_CLOTHES",
-		2 => "COLOR_REF",
-		3 => "MORE_PHOTO",
-		4 => "ARTNUMBER",
-		5 => "",
-	),
-	"LIST_OFFERS_LIMIT" => "0",
-	"SECTION_BACKGROUND_IMAGE" => "UF_BACKGROUND_IMAGE",
-	"DETAIL_PROPERTY_CODE" => array(
-		0 => "NEWPRODUCT",
-		1 => "MANUFACTURER",
-		2 => "MATERIAL",
-	),
-	"DETAIL_META_KEYWORDS" => "KEYWORDS",
-	"DETAIL_META_DESCRIPTION" => "META_DESCRIPTION",
-	"DETAIL_BROWSER_TITLE" => "TITLE",
-	"DETAIL_OFFERS_FIELD_CODE" => array(
-		0 => "NAME",
-		1 => "",
-	),
-	"DETAIL_OFFERS_PROPERTY_CODE" => array(
-		0 => "ARTNUMBER",
-		1 => "SIZES_SHOES",
-		2 => "SIZES_CLOTHES",
-		3 => "COLOR_REF",
-		4 => "MORE_PHOTO",
-		5 => "",
-	),
-	"DETAIL_BACKGROUND_IMAGE" => "BACKGROUND_IMAGE",
-	"LINK_IBLOCK_TYPE" => "",
-	"LINK_IBLOCK_ID" => "",
-	"LINK_PROPERTY_SID" => "",
-	"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
-	"USE_ALSO_BUY" => "Y",
-	"ALSO_BUY_ELEMENT_COUNT" => "4",
-	"ALSO_BUY_MIN_BUYES" => "1",
-	"OFFERS_SORT_FIELD" => "sort",
-	"OFFERS_SORT_ORDER" => "desc",
-	"OFFERS_SORT_FIELD2" => "id",
-	"OFFERS_SORT_ORDER2" => "desc",
-	"PAGER_TEMPLATE" => "round",
-	"DISPLAY_TOP_PAGER" => "N",
-	"DISPLAY_BOTTOM_PAGER" => "Y",
-	"PAGER_TITLE" => "Товары",
-	"PAGER_SHOW_ALWAYS" => "N",
-	"PAGER_DESC_NUMBERING" => "N",
-	"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000000",
-	"PAGER_SHOW_ALL" => "N",
-	"ADD_PICT_PROP" => "MORE_PHOTO",
-	"LABEL_PROP" => array(
-		0 => "NEWPRODUCT",
-	),
-	"PRODUCT_DISPLAY_MODE" => "Y",
-	"OFFER_ADD_PICT_PROP" => "MORE_PHOTO",
-	"OFFER_TREE_PROPS" => array(
-		0 => "SIZES_SHOES",
-		1 => "SIZES_CLOTHES",
-		2 => "COLOR_REF",
-		3 => "",
-	),
-	"SHOW_DISCOUNT_PERCENT" => "Y",
-	"SHOW_OLD_PRICE" => "Y",
-	"MESS_BTN_BUY" => "Купить",
-	"MESS_BTN_ADD_TO_BASKET" => "В корзину",
-	"MESS_BTN_COMPARE" => "Сравнение",
-	"MESS_BTN_DETAIL" => "Подробнее",
-	"MESS_NOT_AVAILABLE" => "Нет в наличии",
-	"DETAIL_USE_VOTE_RATING" => "Y",
-	"DETAIL_VOTE_DISPLAY_AS_RATING" => "rating",
-	"DETAIL_USE_COMMENTS" => "Y",
-	"DETAIL_BLOG_USE" => "Y",
-	"DETAIL_VK_USE" => "N",
-	"DETAIL_FB_USE" => "Y",
-	"AJAX_OPTION_ADDITIONAL" => "",
-	"USE_STORE" => "Y",
-	"BIG_DATA_RCM_TYPE" => "personal",
-	"FIELDS" => array(
-		0 => "STORE",
-		1 => "SCHEDULE",
-	),
-	"USE_MIN_AMOUNT" => "N",
-	"STORE_PATH" => "/store/#store_id#",
-	"MAIN_TITLE" => "Наличие на складах",
-	"MIN_AMOUNT" => "10",
-	"DETAIL_BRAND_USE" => "Y",
-	"DETAIL_BRAND_PROP_CODE" => "BRAND_REF",
-	"COMPATIBLE_MODE" => "N",
-	"SIDEBAR_SECTION_SHOW" => "Y",
-	"SIDEBAR_DETAIL_SHOW" => "Y",
-	"SIDEBAR_PATH" => "/catalog/sidebar.php",
-	"SEF_URL_TEMPLATES" => array(
-		"sections" => "",
-		"section" => "#SECTION_CODE#/",
-		"element" => "#SECTION_CODE#/#ELEMENT_CODE#/",
-		"compare" => "compare/",
-	)
-	),
-	false
-);?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+
+<section class="section">
+  <div class="container catalog">
+
+    <!-- bitrix:breadcrumb -->
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol class="breadcrumbs__list">
+        <li><a href="/">Главная</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page">Каталог</li>
+      </ol>
+    </nav>
+
+    <div class="catalog__head">
+      <div>
+        <h1 class="catalog__title">Каталог</h1>
+        <p class="catalog__count">Найдено <span class="text-cyan">24</span> автомобиля</p>
+      </div>
+      <label class="catalog__sort">
+        Сортировка
+        <select class="catalog__select glass">
+          <option>По популярности</option>
+          <option>Сначала дешевле</option>
+          <option>Сначала дороже</option>
+          <option>По мощности</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="catalog__layout">
+
+      <!-- bitrix:catalog.smart.filter -->
+      <aside aria-label="Фильтры">
+        <form class="filter glass">
+          <div class="filter__head">
+            <h2 class="filter__title">Фильтры</h2>
+            <button type="reset" class="filter__reset">Сбросить</button>
+          </div>
+
+          <fieldset>
+            <legend class="filter__legend">Класс авто</legend>
+            <div class="filter__options">
+              <label class="filter__option">
+                <span class="filter__option-label"><input type="checkbox" class="filter__checkbox" checked> Суперкар</span>
+                <span class="filter__option-count">8</span>
+              </label>
+              <label class="filter__option">
+                <span class="filter__option-label"><input type="checkbox" class="filter__checkbox" checked> Спорт</span>
+                <span class="filter__option-count">7</span>
+              </label>
+              <label class="filter__option">
+                <span class="filter__option-label"><input type="checkbox" class="filter__checkbox"> Бизнес</span>
+                <span class="filter__option-count">5</span>
+              </label>
+              <label class="filter__option">
+                <span class="filter__option-label"><input type="checkbox" class="filter__checkbox"> Внедорожник</span>
+                <span class="filter__option-count">4</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="filter__legend">Цена за сутки</legend>
+            <input type="range" class="filter__range" min="10000" max="150000" step="1000" value="90000" aria-label="Максимальная цена">
+            <div class="filter__prices">
+              <label class="filter__price glass">
+                <span class="filter__price-label">От</span>
+                <input type="text" class="filter__price-input" value="10 000 ₽">
+              </label>
+              <label class="filter__price glass">
+                <span class="filter__price-label">До</span>
+                <input type="text" class="filter__price-input" value="90 000 ₽">
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="filter__legend">Коробка передач</legend>
+            <div class="filter__switch">
+              <label>
+                <input type="radio" name="gearbox" class="sr-only" checked>
+                <span>Автомат</span>
+              </label>
+              <label>
+                <input type="radio" name="gearbox" class="sr-only">
+                <span>Механика</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn--block btn--lime">Показать 24 авто</button>
+        </form>
+      </aside>
+
+      <!-- bitrix:catalog.section -->
+      <div>
+        <ul class="catalog__grid">
+          <?foreach($cars as [$name, $price, $specs]):?>
+          <li>
+            <article class="car-card glass">
+              <div class="img-ph car-card__image">
+                <span class="img-ph__label">Image</span>
+                <span class="car-card__price"><?=$price?> ₽/сут</span>
+              </div>
+              <div class="car-card__body">
+                <h3 class="car-card__title"><?=$name?></h3>
+                <ul class="car-card__specs">
+                  <?foreach($specs as $spec):?><li><?=$spec?></li><?endforeach;?>
+                </ul>
+                <a href="/catalog/detail.php" class="car-card__more">Подробнее</a>
+              </div>
+            </article>
+          </li>
+          <?endforeach;?>
+        </ul>
+
+        <!-- system.pagenavigation -->
+        <nav class="pagination" aria-label="Страницы">
+          <ul class="pagination__list glass">
+            <li><a href="/catalog/" class="pagination__link" aria-label="Предыдущая">←</a></li>
+            <li><a href="/catalog/" class="pagination__link" aria-current="page">1</a></li>
+            <li><a href="/catalog/" class="pagination__link">2</a></li>
+            <li><a href="/catalog/" class="pagination__link">3</a></li>
+            <li><span class="pagination__dots">…</span></li>
+            <li><a href="/catalog/" class="pagination__link">8</a></li>
+            <li><a href="/catalog/" class="pagination__link" aria-label="Следующая">→</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");?>

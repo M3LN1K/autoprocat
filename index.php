@@ -1,162 +1,153 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
-?>
-<?if (IsModuleInstalled("advertising")):?>
-	<div class="mb-5">
-		<?$APPLICATION->IncludeComponent(
-			"bitrix:advertising.banner",
-			"bootstrap_v4",
-			array(
-				"COMPONENT_TEMPLATE" => "bootstrap_v4",
-				"TYPE" => "MAIN",
-				"NOINDEX" => "Y",
-				"QUANTITY" => "3",
-				"BS_EFFECT" => "fade",
-				"BS_CYCLING" => "N",
-				"BS_WRAP" => "Y",
-				"BS_PAUSE" => "Y",
-				"BS_KEYBOARD" => "Y",
-				"BS_ARROW_NAV" => "Y",
-				"BS_BULLET_NAV" => "Y",
-				"BS_HIDE_FOR_TABLETS" => "N",
-				"BS_HIDE_FOR_PHONES" => "Y",
-				"CACHE_TYPE" => "A",
-				"CACHE_TIME" => "36000000",
-			),
-			false
-		);?>
-	</div>
-<?endif?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("NEONDRIVE — Премиальная аренда автомобилей");
+$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
 
-<?
-global $trendFilter;
-$trendFilter = array('PROPERTY_TREND' => '4');
-?>
-<h2>Тренды сезона</h2>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section",
-	"bootstrap_v4",
-	array(
-		"IBLOCK_TYPE_ID" => "catalog",
-		"IBLOCK_ID" => "2",
-		"BASKET_URL" => "/personal/cart/",
-		"COMPONENT_TEMPLATE" => "",
-		"IBLOCK_TYPE" => "catalog",
-		"SECTION_ID" => $_REQUEST["SECTION_ID"],
-		"SECTION_CODE" => "",
-		"SECTION_USER_FIELDS" => array(
-			0 => "",
-			1 => "",
-		),
-		"ELEMENT_SORT_FIELD" => "sort",
-		"ELEMENT_SORT_ORDER" => "desc",
-		"ELEMENT_SORT_FIELD2" => "id",
-		"ELEMENT_SORT_ORDER2" => "desc",
-		"FILTER_NAME" => "trendFilter",
-		"INCLUDE_SUBSECTIONS" => "Y",
-		"SHOW_ALL_WO_SECTION" => "Y",
-		"HIDE_NOT_AVAILABLE" => "N",
-		"PAGE_ELEMENT_COUNT" => "12",
-		"LINE_ELEMENT_COUNT" => "3",
-		"PROPERTY_CODE" => array(
-			0 => "NEWPRODUCT",
-			1 => "",
-		),
-		"OFFERS_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"OFFERS_PROPERTY_CODE" => array(
-			0 => "COLOR_REF",
-			1 => "SIZES_SHOES",
-			2 => "SIZES_CLOTHES",
-			3 => "",
-		),
-		"OFFERS_SORT_FIELD" => "sort",
-		"OFFERS_SORT_ORDER" => "desc",
-		"OFFERS_SORT_FIELD2" => "id",
-		"OFFERS_SORT_ORDER2" => "desc",
-		"TEMPLATE_THEME" => "site",
-		"PRODUCT_DISPLAY_MODE" => "Y",
-		"ADD_PICT_PROP" => "MORE_PHOTO",
-		"LABEL_PROP" => array(
-			0 => "NEWPRODUCT"
-		),
-		"OFFER_ADD_PICT_PROP" => "-",
-		"OFFER_TREE_PROPS" => array(
-			0 => "COLOR_REF",
-			1 => "SIZES_SHOES",
-			2 => "SIZES_CLOTHES",
-		),
-		"PRODUCT_SUBSCRIPTION" => "N",
-		"SHOW_DISCOUNT_PERCENT" => "N",
-		"SHOW_OLD_PRICE" => "Y",
-		"SHOW_CLOSE_POPUP" => "N",
-		"MESS_BTN_BUY" => "Купить",
-		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
-		"MESS_BTN_SUBSCRIBE" => "Подписаться",
-		"MESS_BTN_DETAIL" => "Подробнее",
-		"MESS_NOT_AVAILABLE" => "Нет в наличии",
-		"SECTION_URL" => "",
-		"DETAIL_URL" => "",
-		"SECTION_ID_VARIABLE" => "SECTION_ID",
-		"SEF_MODE" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "Y",
-		"SET_TITLE" => "Y",
-		"SET_BROWSER_TITLE" => "Y",
-		"BROWSER_TITLE" => "-",
-		"SET_META_KEYWORDS" => "Y",
-		"META_KEYWORDS" => "-",
-		"SET_META_DESCRIPTION" => "Y",
-		"META_DESCRIPTION" => "-",
-		"SET_LAST_MODIFIED" => "N",
-		"USE_MAIN_ELEMENT_SECTION" => "N",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"CACHE_FILTER" => "N",
-		"ACTION_VARIABLE" => "action",
-		"PRODUCT_ID_VARIABLE" => "id",
-		"PRICE_CODE" => array(
-			0 => "BASE",
-		),
-		"USE_PRICE_COUNT" => "N",
-		"SHOW_PRICE_COUNT" => "1",
-		"PRICE_VAT_INCLUDE" => "Y",
-		"CONVERT_CURRENCY" => "N",
-		"USE_PRODUCT_QUANTITY" => "N",
-		"PRODUCT_QUANTITY_VARIABLE" => "",
-		"ADD_PROPERTIES_TO_BASKET" => "Y",
-		"PRODUCT_PROPS_VARIABLE" => "prop",
-		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRODUCT_PROPERTIES" => array(
-		),
-		"OFFERS_CART_PROPERTIES" => array(
-			0 => "COLOR_REF",
-			1 => "SIZES_SHOES",
-			2 => "SIZES_CLOTHES",
-		),
-		"ADD_TO_BASKET_ACTION" => "ADD",
-		"PAGER_TEMPLATE" => "round",
-		"DISPLAY_TOP_PAGER" => "N",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"PAGER_TITLE" => "Товары",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"SET_STATUS_404" => "N",
-		"SHOW_404" => "N",
-		"MESSAGE_404" => "",
-		"COMPATIBLE_MODE" => "N",
-	),
-	false
-);?>
+<!-- Hero -->
+<section class="section">
+  <div class="container hero">
+    <div class="blob blob--violet" aria-hidden="true"></div>
+    <div class="blob blob--cyan" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="hero__tag glass">
+        <span class="hero__pulse"></span>
+        Москва · 24/7 · Доставка авто
+      </p>
+      <h1 class="hero__title">
+        ВЫБЕРИ<br>СВОЮ <span class="hero__title-accent">СКОРОСТЬ</span>
+      </h1>
+      <p class="hero__lead">Суперкары и премиальные автомобили без залога&nbsp;— от одного часа до месяца.</p>
+
+      <div class="hero__buttons">
+        <a href="/catalog/" class="btn btn--lg btn--lime">Забронировать</a>
+        <a href="/catalog/" class="btn btn--lg btn--glass glass">Смотреть автопарк</a>
+      </div>
+
+      <dl class="hero__stats">
+        <div><dt>Автомобилей</dt><dd>48</dd></div>
+        <div><dt>Подача</dt><dd>60 мин</dd></div>
+        <div><dt>Рейтинг</dt><dd>4.9</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__media">
+      <div class="img-ph hero__image">
+        <!-- <img src="<?=SITE_TEMPLATE_PATH?>/images/hero-car.jpg" alt="Lamborghini Huracán EVO"> -->
+        <span class="img-ph__label">Cinematic car image · 1600×1200</span>
+      </div>
+      <div class="hero__hit glass">
+        <div>
+          <p class="hero__hit-label">Хит недели</p>
+          <p class="hero__hit-name">Lamborghini Huracán EVO</p>
+        </div>
+        <span class="price-tag">89 000 ₽</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Популярные автомобили -->
+<section class="section">
+  <div class="container popular">
+    <div class="popular__head">
+      <div>
+        <p class="eyebrow eyebrow--violet">Автопарк</p>
+        <h2 class="section-title">Популярные автомобили</h2>
+      </div>
+      <a href="/catalog/" class="popular__all">Весь каталог →</a>
+    </div>
+
+    <div class="popular__list">
+      <!-- Шаблон карточки (bitrix:news.list). Модификатор цвета: home-card--cyan / --violet / --lime -->
+      <article class="home-card home-card--cyan glass">
+        <div class="img-ph home-card__image">
+          <span class="img-ph__label">Image 16:10</span>
+          <span class="badge badge--cyan">Суперкар</span>
+        </div>
+        <div class="home-card__body">
+          <h3 class="home-card__title">Lamborghini Huracán EVO</h3>
+          <p class="home-card__specs">2.9 с · 640 л.с. · AWD</p>
+          <div class="home-card__footer">
+            <span class="price-tag">89 000 ₽ / сутки</span>
+            <a href="/catalog/detail.php" class="home-card__more">Подробнее →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="home-card home-card--violet glass">
+        <div class="img-ph home-card__image">
+          <span class="img-ph__label">Image 16:10</span>
+          <span class="badge badge--violet">Спорт</span>
+        </div>
+        <div class="home-card__body">
+          <h3 class="home-card__title">Porsche 911 Turbo S</h3>
+          <p class="home-card__specs">2.7 с · 650 л.с. · AWD</p>
+          <div class="home-card__footer">
+            <span class="price-tag">64 000 ₽ / сутки</span>
+            <a href="/catalog/detail.php" class="home-card__more">Подробнее →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="home-card home-card--lime glass">
+        <div class="img-ph home-card__image">
+          <span class="img-ph__label">Image 16:10</span>
+          <span class="badge badge--lime">Внедорожник</span>
+        </div>
+        <div class="home-card__body">
+          <h3 class="home-card__title">Mercedes-AMG G 63</h3>
+          <p class="home-card__specs">4.5 с · 585 л.с. · 4MATIC</p>
+          <div class="home-card__footer">
+            <span class="price-tag">42 000 ₽ / сутки</span>
+            <a href="/catalog/detail.php" class="home-card__more">Подробнее →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Как это работает -->
+<section class="section" id="how">
+  <div class="container steps">
+    <div class="steps__head">
+      <p class="eyebrow eyebrow--cyan">Просто</p>
+      <h2 class="section-title">Как это работает</h2>
+    </div>
+
+    <ol class="steps__list">
+      <li class="step step--cyan glass">
+        <div class="step__top">
+          <span class="step__icon">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </span>
+          <span class="step__num">01</span>
+        </div>
+        <h3 class="step__title">Выберите авто</h3>
+        <p class="step__text">Фильтруйте по классу, мощности и цене. Все автомобили в наличии и готовы к выезду.</p>
+      </li>
+      <li class="step step--violet glass">
+        <div class="step__top">
+          <span class="step__icon">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+          </span>
+          <span class="step__num">02</span>
+        </div>
+        <h3 class="step__title">Забронируйте онлайн</h3>
+        <p class="step__text">Укажите даты и место подачи. Подтверждение приходит в течение 5 минут.</p>
+      </li>
+      <li class="step step--lime glass">
+        <div class="step__top">
+          <span class="step__icon">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+          </span>
+          <span class="step__num">03</span>
+        </div>
+        <h3 class="step__title">Получите ключи</h3>
+        <p class="step__text">Доставим автомобиль по адресу в течение часа. Остаётся только нажать на газ.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

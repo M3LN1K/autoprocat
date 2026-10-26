@@ -1,0 +1,124 @@
+/* =========================================================
+   NEONDRIVE — Каталог
+   ========================================================= */
+
+.catalog { padding-top: 48px; padding-bottom: 48px; }
+
+.catalog__head {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;
+  margin-bottom: 40px;
+}
+.catalog__title {
+  font-family: var(--font-display); font-size: 36px; font-weight: 700;
+  line-height: 1.1; color: var(--c-white);
+}
+@media (min-width: 640px) { .catalog__title { font-size: 48px; } }
+.catalog__count { margin-top: 8px; color: var(--c-dim); }
+
+.catalog__sort { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--c-dim); }
+.catalog__select {
+  padding: 8px 16px; border-radius: 9999px; outline: none;
+  font-family: var(--font-display); font-size: 14px; color: var(--c-white);
+}
+.catalog__select:focus { border-color: rgba(0, 212, 255, .6); }
+.catalog__select option { background: var(--c-bg); }
+
+.catalog__layout { display: grid; gap: 32px; }
+@media (min-width: 1024px) { .catalog__layout { grid-template-columns: 280px 1fr; } }
+
+/* ---------- Фильтр ---------- */
+.filter {
+  position: sticky; top: 96px;
+  display: flex; flex-direction: column; gap: 32px;
+  padding: 24px; border-radius: 24px;
+}
+.filter__head { display: flex; align-items: center; justify-content: space-between; }
+.filter__title { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--c-white); }
+.filter__reset { font-size: 12px; color: var(--c-dim); transition: color .25s ease; }
+.filter__reset:hover { color: var(--c-cyan); }
+
+.filter__legend {
+  margin-bottom: 16px; font-family: var(--font-display); font-size: 12px;
+  text-transform: uppercase; letter-spacing: .2em; color: var(--c-dim);
+}
+
+.filter__options { display: flex; flex-direction: column; gap: 12px; }
+.filter__option {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px; border-radius: 12px; cursor: pointer;
+  transition: background .25s ease;
+}
+.filter__option:hover { background: rgba(255, 255, 255, .05); }
+.filter__option-label { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--c-text); }
+.filter__option-count { font-size: 12px; color: var(--c-faint); }
+.filter__checkbox { width: 16px; height: 16px; margin: 0; accent-color: var(--c-lime); }
+
+.filter__range { width: 100%; accent-color: var(--c-cyan); }
+.filter__prices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.filter__price { display: block; padding: 8px 12px; border-radius: 12px; }
+.filter__price-label { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--c-faint); }
+.filter__price-input {
+  width: 100%; padding: 0; border: 0; outline: none; background: transparent;
+  font-family: var(--font-display); font-size: 14px; color: var(--c-white);
+}
+
+.filter__switch {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  padding: 4px; border-radius: 9999px; background: rgba(255, 255, 255, .05);
+}
+.filter__switch label { cursor: pointer; }
+.filter__switch span {
+  display: block; padding: 8px 0; border-radius: 9999px; text-align: center;
+  font-family: var(--font-display); font-size: 14px; color: var(--c-muted);
+  transition: background .25s ease, color .25s ease, box-shadow .25s ease;
+}
+.filter__switch input:checked + span { background: var(--c-cyan); color: var(--c-black); box-shadow: var(--glow-cyan); }
+.filter__switch input:focus-visible + span { outline: 2px solid var(--c-cyan); outline-offset: 2px; }
+
+/* ---------- Сетка товаров ---------- */
+.catalog__grid { display: grid; gap: 24px; }
+@media (min-width: 640px) { .catalog__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1280px) { .catalog__grid { grid-template-columns: repeat(3, 1fr); } }
+
+.car-card {
+  display: flex; flex-direction: column; height: 100%;
+  overflow: hidden; border-radius: 24px;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.car-card:hover { transform: translateY(-4px); border-color: rgba(0, 212, 255, .4); box-shadow: var(--glow-cyan); }
+.car-card__image { aspect-ratio: 16 / 10; }
+.car-card__price {
+  position: absolute; right: 16px; top: 16px;
+  padding: 4px 12px; border-radius: 9999px;
+  font-family: var(--font-display); font-size: 12px; font-weight: 700;
+  color: var(--c-black); background: var(--c-lime); box-shadow: var(--glow-lime);
+}
+.car-card__body { display: flex; flex: 1; flex-direction: column; padding: 20px; }
+.car-card__title { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--c-white); }
+.car-card__specs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-size: 12px; }
+.car-card__specs li { padding: 4px 10px; border-radius: 9999px; background: rgba(255, 255, 255, .05); color: var(--c-muted); }
+.car-card__more {
+  margin-top: auto; padding: 10px 0; border-radius: 9999px; text-align: center;
+  border: 1px solid rgba(255, 255, 255, .1);
+  font-family: var(--font-display); font-size: 14px; color: var(--c-white);
+  transition: border-color .25s ease, color .25s ease;
+}
+.car-card__specs + .car-card__more { margin-top: 20px; }
+.car-card:hover .car-card__more { border-color: rgba(0, 212, 255, .6); color: var(--c-cyan); }
+
+/* ---------- Пагинация ---------- */
+.pagination { display: flex; justify-content: center; margin-top: 48px; }
+.pagination__list {
+  display: flex; align-items: center; gap: 4px; padding: 6px; border-radius: 9999px;
+  font-family: var(--font-display); font-size: 14px;
+}
+.pagination__link {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%; color: var(--c-muted);
+  transition: background .25s ease, color .25s ease;
+}
+.pagination__link:hover { background: rgba(255, 255, 255, .05); color: var(--c-white); }
+.pagination__link[aria-current="page"] {
+  background: var(--c-cyan); color: var(--c-black); font-weight: 600; box-shadow: var(--glow-cyan);
+}
+.pagination__dots { display: flex; align-items: center; justify-content: center; width: 24px; height: 40px; color: var(--c-faint); }
