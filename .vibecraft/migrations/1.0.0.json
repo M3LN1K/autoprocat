@@ -1,4 +1,0 @@
-{
-  "scripts": ["typecheck", "build"],
-  "description": "Initialize template versioning."
-}
