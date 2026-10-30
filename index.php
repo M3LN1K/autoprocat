@@ -32,7 +32,7 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
 
     <div class="hero__media">
       <div class="img-ph hero__image">
-        <!-- <img src="<?=SITE_TEMPLATE_PATH?>/images/hero-car.jpg" alt="Lamborghini Huracán EVO"> -->
+          <img src="<?=SITE_TEMPLATE_PATH?>/images/hero_cars.png" alt="Lamborghini Huracán EVO">
         <span class="img-ph__label">Cinematic car image · 1600×1200</span>
       </div>
       <div class="hero__hit glass">
@@ -61,11 +61,12 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
       <!-- Шаблон карточки (bitrix:news.list). Модификатор цвета: home-card--cyan / --violet / --lime -->
       <article class="home-card home-card--cyan glass">
         <div class="img-ph home-card__image">
+          <img src="<?=SITE_TEMPLATE_PATH?>/images/chevrolet_camaro_ss.png" alt="Chevrolet Camaro SS ">
           <span class="img-ph__label">Image 16:10</span>
-          <span class="badge badge--cyan">Суперкар</span>
+          <span class="badge badge--violet">Спорт</span>
         </div>
         <div class="home-card__body">
-          <h3 class="home-card__title">Lamborghini Huracán EVO</h3>
+          <h3 class="home-card__title">Ford Mustang GT</h3>
           <p class="home-card__specs">2.9 с · 640 л.с. · AWD</p>
           <div class="home-card__footer">
             <span class="price-tag">89 000 ₽ / сутки</span>
@@ -76,11 +77,12 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
 
       <article class="home-card home-card--violet glass">
         <div class="img-ph home-card__image">
+          <img src="<?=SITE_TEMPLATE_PATH?>/images/dodge_challenger_srt_hellcat.png" alt="Dodge Challenger SRT Hellcat">
           <span class="img-ph__label">Image 16:10</span>
-          <span class="badge badge--violet">Спорт</span>
+          <span class="badge badge--lime">Внедорожник</span>
         </div>
         <div class="home-card__body">
-          <h3 class="home-card__title">Porsche 911 Turbo S</h3>
+          <h3 class="home-card__title">Chevrolet Camaro SS </h3>
           <p class="home-card__specs">2.7 с · 650 л.с. · AWD</p>
           <div class="home-card__footer">
             <span class="price-tag">64 000 ₽ / сутки</span>
@@ -91,11 +93,12 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
 
       <article class="home-card home-card--lime glass">
         <div class="img-ph home-card__image">
+          <img src="<?=SITE_TEMPLATE_PATH?>/images/ford_mustang_gt.png" alt="Ford Mustang GT">
           <span class="img-ph__label">Image 16:10</span>
-          <span class="badge badge--lime">Внедорожник</span>
+          <span class="badge badge--cyan">Суперкар</span>
         </div>
         <div class="home-card__body">
-          <h3 class="home-card__title">Mercedes-AMG G 63</h3>
+          <h3 class="home-card__title">Dodge Challenger SRT Hellcat</h3>
           <p class="home-card__specs">4.5 с · 585 л.с. · 4MATIC</p>
           <div class="home-card__footer">
             <span class="price-tag">42 000 ₽ / сутки</span>
@@ -111,7 +114,6 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/home.css");?>
 <section class="section" id="how">
   <div class="container steps">
     <div class="steps__head">
-      <p class="eyebrow eyebrow--cyan">Просто</p>
       <h2 class="section-title">Как это работает</h2>
     </div>
 
