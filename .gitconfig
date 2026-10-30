@@ -1,0 +1,22 @@
+[safe]
+	directory = /home/w/whynotuy/autoprocat.whynotuy.beget.tech/public_html
+[alias]
+	st = status -sb
+	co = checkout
+	br = branch
+	ci = commit
+	lg = log --oneline --graph --decorate --all
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	amend = commit --amend --no-edit
+	pl = pull
+	ps = push
+	po = push origin
+	fetch-all = fetch --all --prune
+	discard = checkout -- .
+	undo = reset --soft HEAD^
+	hard-reset = reset --hard HEAD
+	d = diff
+	dc = diff --cached
+	ds = diff --stat
+	clean-branch = !git branch --merged | grep -v \\\"\\\\*\\\" | xargs -n 1 git branch -d
